@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { CartApp } from './cart-app'
+import { CartApp } from './CartApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
