@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 export const ProductCardView = ({ id, name, description, price, handler }) => {
+    const navegate = useNavigate();
+
     const onAddProduct = (product) => {
         handler(product);
+        navegate('/cart');
     }
 
     return (

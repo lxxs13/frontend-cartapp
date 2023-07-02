@@ -1,24 +1,18 @@
-import { CartView } from "./components/CartView"
-import { CatalogView } from "./components/CatalogView"
 import { useItemsCart } from "./hooks/useItemsCart"
+import { Navbar } from "./components/NavBar";
+import { CartRoutes } from "./routes/CartRoutes";
 
 export const CartApp = () => {
     const { cartItems, handlerAddProductCart, handlerDeleteProduct } = useItemsCart();
 
     return (
         <>
+            <Navbar />
             <div className="container my-4">
-
-                <h3>Cart App</h3>
-
-                <CatalogView handler={handlerAddProductCart} />
-                {
-                    cartItems?.length <= 0 || (
-                        <div className="my-4 w-50" >
-                            <CartView items={cartItems} handlerDelete={handlerDeleteProduct} />
-                        </div>
-                    )
-                }
+                <CartRoutes
+                    cartItems={cartItems}
+                    handlerAddProductCart={handlerAddProductCart}
+                    handlerDeleteProduct={handlerDeleteProduct} />
             </div>
         </>
     )
